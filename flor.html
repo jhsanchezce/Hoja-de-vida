@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Una flor para ti</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #1a1033 0%, #3b1d5a 60%, #6b2d5c 100%);
+    font-family: Georgia, "Times New Roman", serif;
+    overflow: hidden;
+  }
+
+  .flor {
+    position: relative;
+    width: 200px;
+    height: 330px;
+    animation: balanceo 5s ease-in-out infinite;
+    transform-origin: bottom center;
+  }
+
+  /* Centro */
+  .centro {
+    position: absolute;
+    top: 60px;
+    left: 70px;
+    width: 60px;
+    height: 60px;
+    background: radial-gradient(circle, #ffd54f 30%, #f9a825 100%);
+    border-radius: 50%;
+    z-index: 5;
+    box-shadow: 0 0 20px rgba(255, 213, 79, 0.7);
+  }
+
+  /* Pétalos */
+  .petalo {
+    position: absolute;
+    top: 0;
+    left: 80px;
+    width: 40px;
+    height: 90px;
+    background: linear-gradient(to top, #ff4f8b, #ff9ec4);
+    border-radius: 50% 50% 50% 50% / 70% 70% 30% 30%;
+    transform-origin: bottom center;
+    top: 30px;
+    animation: abrir 2s ease-out both;
+  }
+  .petalo:nth-child(1) { transform: rotate(0deg)   translateY(-35px); }
+  .petalo:nth-child(2) { transform: rotate(45deg)  translateY(-35px); }
+  .petalo:nth-child(3) { transform: rotate(90deg)  translateY(-35px); }
+  .petalo:nth-child(4) { transform: rotate(135deg) translateY(-35px); }
+  .petalo:nth-child(5) { transform: rotate(180deg) translateY(-35px); }
+  .petalo:nth-child(6) { transform: rotate(225deg) translateY(-35px); }
+  .petalo:nth-child(7) { transform: rotate(270deg) translateY(-35px); }
+  .petalo:nth-child(8) { transform: rotate(315deg) translateY(-35px); }
+
+  @keyframes abrir {
+    from { opacity: 0; scale: 0.2; }
+    to   { opacity: 1; scale: 1; }
+  }
+
+  /* Tallo */
+  .tallo {
+    position: absolute;
+    top: 120px;
+    left: 94px;
+    width: 12px;
+    height: 210px;
+    background: linear-gradient(to right, #2e7d32, #66bb6a);
+    border-radius: 6px;
+    z-index: 1;
+  }
+
+  /* Hojas */
+  .hoja {
+    position: absolute;
+    width: 70px;
+    height: 35px;
+    background: linear-gradient(to right, #2e7d32, #81c784);
+    z-index: 2;
+  }
+  .hoja.izq {
+    top: 220px;
+    left: 30px;
+    border-radius: 100% 0 100% 0;
+    transform: rotate(-10deg);
+  }
+  .hoja.der {
+    top: 255px;
+    left: 100px;
+    border-radius: 0 100% 0 100%;
+    transform: rotate(10deg);
+  }
+
+  @keyframes balanceo {
+    0%, 100% { transform: rotate(-3deg); }
+    50%      { transform: rotate(3deg); }
+  }
+
+  .frase {
+    margin-top: 30px;
+    padding: 0 20px;
+    text-align: center;
+    color: #ffe3ef;
+    font-size: clamp(1.2rem, 4vw, 2rem);
+    font-style: italic;
+    text-shadow: 0 0 12px rgba(255, 120, 170, 0.8);
+    opacity: 0;
+    animation: aparecer 3s ease 1.5s forwards;
+  }
+
+  @keyframes aparecer {
+    to { opacity: 1; }
+  }
+
+  /* Corazones flotantes */
+  .corazon {
+    position: absolute;
+    bottom: -30px;
+    color: #ff6fa5;
+    opacity: 0;
+    animation: subir 7s linear infinite;
+  }
+  @keyframes subir {
+    0%   { transform: translateY(0) scale(0.6); opacity: 0; }
+    20%  { opacity: 0.8; }
+    100% { transform: translateY(-100vh) scale(1.2); opacity: 0; }
+  }
+</style>
+</head>
+<body>
+
+  <div class="flor">
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="petalo"></div>
+    <div class="centro"></div>
+    <div class="tallo"></div>
+    <div class="hoja izq"></div>
+    <div class="hoja der"></div>
+  </div>
+
+  <p class="frase">"Eres la flor más hermosa de mi jardín, y mi corazón siempre te elegirá a ti."</p>
+
+  <script>
+    // Corazones que suben por la pantalla
+    for (let i = 0; i < 15; i++) {
+      const c = document.createElement("span");
+      c.className = "corazon";
+      c.textContent = "❤";
+      c.style.left = Math.random() * 100 + "vw";
+      c.style.fontSize = 14 + Math.random() * 20 + "px";
+      c.style.animationDelay = Math.random() * 7 + "s";
+      c.style.animationDuration = 5 + Math.random() * 5 + "s";
+      document.body.appendChild(c);
+    }
+  </script>
+
+</body>
+</html>
