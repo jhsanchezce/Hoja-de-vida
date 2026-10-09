@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hoja de Vida - Jhonatan Sanchez</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 30px;
+            font-family: Arial, sans-serif;
+            background: #edf1f5;
+            color: #333;
+        }
+
+        .hoja {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            box-shadow: 0 4px 18px #0002;
+        }
+
+        .lateral {
+            background: #17365d;
+            color: white;
+            padding: 30px 22px;
+        }
+
+        .contenido {
+            padding: 30px;
+        }
+
+        h1 {
+            font-size: 25px;
+            margin: 0 0 8px;
+            overflow-wrap: anywhere;
+        }
+
+        .cargo {
+            color: #b9d5f5;
+            font-size: 15px;
+            margin-bottom: 25px;
+        }
+
+        h2 {
+            font-size: 16px;
+            color: #17365d;
+            border-bottom: 2px solid #2f75b5;
+            padding-bottom: 7px;
+            margin-top: 25px;
+        }
+
+        .lateral h2 {
+            color: white;
+            border-bottom-color: #8db8e8;
+        }
+
+        p, li {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .dato {
+            margin-bottom: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        .etiqueta {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 3px;
+        }
+
+        .espacio {
+            border-bottom: 1px solid #999;
+            display: inline-block;
+            min-width: 150px;
+            height: 18px;
+        }
+
+        .bloque {
+            margin-bottom: 18px;
+        }
+
+        .botones {
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        button {
+            border: none;
+            background: #17365d;
+            color: white;
+            padding: 12px 20px;
+            margin: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #2f75b5;
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 10px;
+            }
+
+            .hoja {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+
+            .hoja {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            .botones {
+                display: none;
+            }
+
+            .lateral {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="hoja">
+
+    <aside class="lateral">
+        <h1>Jhonatan Smit Sanchez Cedeño</h1>
+        <div class="cargo">ASPIRANTE A CARGO TÉCNICO</div>
+
+        <h2>Contacto</h2>
+
+        <div class="dato">
+            <span class="etiqueta">Ciudad</span>
+            Bogotá, Colombia
+        </div>
+
+        <div class="dato">
+            <span class="etiqueta">Teléfono</span>
+            3144824547
+        </div>
+
+        <div class="dato">
+            <span class="etiqueta">Correo electrónico</span>
+            jonatansmith510@gmail.com
+        </div>
+
+        <h2>Habilidades</h2>
+        <ul>
+            <li>Responsabilidad y compromiso</li>
+            <li>Trabajo en equipo</li>
+            <li>Organización</li>
+            <li>Disposición para aprender</li>
+        </ul>
+
+        <h2>Conocimientos técnicos</h2>
+        <p>Área técnica: Soporte</p>
+        <p>Programas y herramientas: Software</p>
+        
+
+        <h2>Referencias</h2>
+        <p>Nombre: Wilson sanchez</p>
+        <p>Teléfono: 3201546896</p>
+    </aside>
+
+    <main class="contenido">
+
+        <h2>Perfil profesional</h2>
+        <p>
+            Tecnólogo con experiencia laboral, interesado en desempeñarse
+            en un cargo técnico. Con disposición para aportar sus
+            conocimientos, cumplir con las responsabilidades asignadas
+            y contribuir al logro de los objetivos de la empresa.
+        </p>
+        <p>
+            Área de especialidad: Soporte Tecnico
+        </p>
+
+        <h2>Formación académica</h2>
+        <div class="bloque">
+            <p><strong>Título:</strong> Tecnólogo en Sena</p>
+            <p><strong>Institución:</strong> Sena</p>
+            <p><strong>Año de finalización:</strong> 2019</p>
+        </div>
+
+        <h2>Experiencia laboral</h2>
+        <div class="bloque">
+            <p><strong>Empresa:</strong> Davivienda</p>
+            <p><strong>Cargo:</strong> Tecnico en Soporte computo</p>
+            <p><strong>Periodo:</strong> 2 años</p>
+            <p><strong>Funciones realizadas:</strong></p>
+            <p>Brindar el soporte en la oficina que reportaban iregularidades como en el tema tecnologico e infraestructura</p>
+     
+        </div>
+
+</main>
+</div>
+
+<div class="botones">
+    <button onclick="window.print()">Imprimir / Guardar como PDF</button>
+    <button onclick="window.location.reload()">Recargar página</button>
+</div>
+
+</body>
+</html>
